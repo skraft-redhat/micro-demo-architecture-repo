@@ -16,6 +16,6 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello from stage " + stage + ". This was developed with OpenShift DevSpaces. v4";
+        return "Hello from stage " + stage + ". This was developed with OpenShift DevSpaces. v5";
     }
 }
