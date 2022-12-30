@@ -1,0 +1,3 @@
+com/redhat/developer/demos/customer/rest/CustomerResource.class
+com/redhat/developer/demos/customer/rest/BaggageHeadersFactory.class
+com/redhat/developer/demos/customer/rest/PreferenceService.class
