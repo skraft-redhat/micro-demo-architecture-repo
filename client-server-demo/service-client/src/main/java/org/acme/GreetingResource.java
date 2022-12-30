@@ -12,6 +12,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 @Path("/greeting")
 public class GreetingResource {
     
+    @Inject
     @RestClient
     RestServiceProxy proxy;
 
