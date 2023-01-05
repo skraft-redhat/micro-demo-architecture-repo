@@ -1,20 +1,23 @@
 package org.acme;
 
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.ProcessingException;
+import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jboss.logging.Logger;
 
 @Path("/")
 public class CustomerResource {
 
     private static final String RESPONSE_STRING_FORMAT = "customer => %s\n";
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = Logger.getLogger(CustomerResource.class);
 
     @Inject
     @RestClient

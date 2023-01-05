@@ -30,7 +30,7 @@
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-smallrye-opentracing</artifactId>
+      <artifactId>quarkus-opentelemetry</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -63,6 +63,10 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-reactive</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-opentelemetry-exporter-otlp</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>

@@ -1,8 +1,10 @@
 package org.acme;
 
+import org.eclipse.microprofile.metrics.MetricUnits;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.jboss.logging.Logger;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -14,7 +16,7 @@ public class PreferenceResource {
 
     private static final String RESPONSE_STRING_FORMAT = "preference => %s\n";
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = Logger.getLogger(PreferenceResource.class);
 
     @Inject
     @RestClient
@@ -22,9 +24,15 @@ public class PreferenceResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
+    @Counted(name = "performedRequests", description = "How many primality checks have been performed.")
+    @Timed(name = "checksTimer", description = "A measure of how long it takes to perform the primality test.", unit = MetricUnits.MILLISECONDS)
+
+
     public Response getPreference() {
         try {
+            this.delayArtificially();
             String response = recommendationService.getRecommendation();
+
             logger.info(String.format("Preference Service hit!"));
             return Response.ok(String.format(RESPONSE_STRING_FORMAT, response)).build();
         } catch (WebApplicationException ex) {
@@ -42,4 +50,13 @@ public class PreferenceResource {
         }
     }
 
+    public void delayArtificially() {
+        try {
+            Thread.sleep(1000);
+            logger.info("Artificial delay for 1s");
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }
+
+    }
 }
