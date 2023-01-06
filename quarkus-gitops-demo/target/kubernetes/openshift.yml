@@ -47,7 +47,7 @@ spec:
         app.kubernetes.io/version: "5.0"
     spec:
       containers:
-        - image: quay.io/skraft/quarkus-gitop-demo:6.0
+        - image: quay.io/skraft/quarkus-gitop-demo:7.0
           imagePullPolicy: Always
           name: quarkus-gitop-demo
           ports:
