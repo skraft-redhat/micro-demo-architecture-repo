@@ -11,7 +11,6 @@ metadata:
     app.kubernetes.io/version: "2.0"
     app.openshift.io/runtime: quarkus
   name: quarkus-gitop-demo
-  namespace: skraft-dev
 spec:
   ports:
     - name: http
@@ -34,7 +33,6 @@ metadata:
     app.kubernetes.io/version: "2.0"
     app.kubernetes.io/name: quarkus-gitop-demo
   name: quarkus-gitop-demo
-  namespace: skraft-dev
 spec:
   replicas: 1
   selector:
@@ -69,7 +67,6 @@ metadata:
     app.kubernetes.io/version: "2.0"
     app.openshift.io/runtime: quarkus
   name: quarkus-gitop-demo
-  namespace: skraft-dev
 spec:
   port:
     targetPort: 8080
