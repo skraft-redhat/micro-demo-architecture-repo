@@ -4,13 +4,14 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 288d89f9fdfc2c8d2a7eae04b8849fcde1569245
-    app.quarkus.io/build-timestamp: 2023-01-06 - 09:49:54 +0000
+    app.quarkus.io/commit-id: 342ad52a618738c6d16f4b6cda11274a04ff34f5
+    app.quarkus.io/build-timestamp: 2023-01-06 - 10:24:26 +0000
   labels:
     app.kubernetes.io/name: quarkus-gitop-demo
-    app.kubernetes.io/version: "2.0"
+    app.kubernetes.io/version: "3.0"
     app.openshift.io/runtime: quarkus
   name: quarkus-gitop-demo
+  namespace: skraft-dev
 spec:
   ports:
     - name: http
@@ -18,7 +19,7 @@ spec:
       targetPort: 8080
   selector:
     app.kubernetes.io/name: quarkus-gitop-demo
-    app.kubernetes.io/version: "2.0"
+    app.kubernetes.io/version: "3.0"
   type: ClusterIP
 ---
 apiVersion: apps/v1
@@ -26,28 +27,29 @@ kind: Deployment
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 288d89f9fdfc2c8d2a7eae04b8849fcde1569245
-    app.quarkus.io/build-timestamp: 2023-01-06 - 09:49:54 +0000
+    app.quarkus.io/commit-id: 342ad52a618738c6d16f4b6cda11274a04ff34f5
+    app.quarkus.io/build-timestamp: 2023-01-06 - 10:24:26 +0000
   labels:
     app.openshift.io/runtime: quarkus
-    app.kubernetes.io/version: "2.0"
+    app.kubernetes.io/version: "3.0"
     app.kubernetes.io/name: quarkus-gitop-demo
   name: quarkus-gitop-demo
+  namespace: skraft-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/version: "2.0"
+      app.kubernetes.io/version: "3.0"
       app.kubernetes.io/name: quarkus-gitop-demo
   template:
     metadata:
       labels:
         app.openshift.io/runtime: quarkus
-        app.kubernetes.io/version: "2.0"
+        app.kubernetes.io/version: "3.0"
         app.kubernetes.io/name: quarkus-gitop-demo
     spec:
       containers:
-        - image: quay.io/skraft/quarkus-gitop-demo:2.0
+        - image: quay.io/skraft/quarkus-gitop-demo:3.0
           imagePullPolicy: Always
           name: quarkus-gitop-demo
           ports:
@@ -60,13 +62,14 @@ kind: Route
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 288d89f9fdfc2c8d2a7eae04b8849fcde1569245
-    app.quarkus.io/build-timestamp: 2023-01-06 - 09:49:54 +0000
+    app.quarkus.io/commit-id: 342ad52a618738c6d16f4b6cda11274a04ff34f5
+    app.quarkus.io/build-timestamp: 2023-01-06 - 10:24:26 +0000
   labels:
     app.kubernetes.io/name: quarkus-gitop-demo
-    app.kubernetes.io/version: "2.0"
+    app.kubernetes.io/version: "3.0"
     app.openshift.io/runtime: quarkus
   name: quarkus-gitop-demo
+  namespace: skraft-dev
 spec:
   port:
     targetPort: 8080
