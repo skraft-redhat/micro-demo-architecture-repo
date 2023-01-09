@@ -4,11 +4,10 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 3ce84f5796d0815d7e0d5f66f75f6f0c41e5d3fb
-    app.quarkus.io/build-timestamp: 2023-01-09 - 09:43:04 +0000
+    app.quarkus.io/commit-id: b36fc93ae41088b304a877ce908b8169be427e4c
+    app.quarkus.io/build-timestamp: 2023-01-09 - 12:21:58 +0000
   labels:
     app.kubernetes.io/name: quarkus-gitop-demo
-    app.kubernetes.io/version: "3.0"
     app.openshift.io/runtime: quarkus
   name: quarkus-gitop-demo
 spec:
@@ -18,7 +17,6 @@ spec:
       targetPort: 8080
   selector:
     app.kubernetes.io/name: quarkus-gitop-demo
-    app.kubernetes.io/version: "3.0"
   type: ClusterIP
 ---
 apiVersion: apps/v1
@@ -26,8 +24,8 @@ kind: Deployment
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 3ce84f5796d0815d7e0d5f66f75f6f0c41e5d3fb
-    app.quarkus.io/build-timestamp: 2023-01-09 - 09:43:04 +0000
+    app.quarkus.io/commit-id: b36fc93ae41088b304a877ce908b8169be427e4c
+    app.quarkus.io/build-timestamp: 2023-01-09 - 12:21:58 +0000
   labels:
     app.openshift.io/runtime: quarkus
     app.kubernetes.io/name: quarkus-gitop-demo
@@ -44,7 +42,7 @@ spec:
         app.kubernetes.io/name: quarkus-gitop-demo
     spec:
       containers:
-        - image: quay.io/skraft/quarkus-gitop-demo:3.0
+        - image: quay.io/skraft/quarkus-gitop-demo:4.0
           imagePullPolicy: Always
           name: quarkus-gitop-demo
           ports:
@@ -57,11 +55,10 @@ kind: Route
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 3ce84f5796d0815d7e0d5f66f75f6f0c41e5d3fb
-    app.quarkus.io/build-timestamp: 2023-01-09 - 09:43:04 +0000
+    app.quarkus.io/commit-id: b36fc93ae41088b304a877ce908b8169be427e4c
+    app.quarkus.io/build-timestamp: 2023-01-09 - 12:21:58 +0000
   labels:
     app.kubernetes.io/name: quarkus-gitop-demo
-    app.kubernetes.io/version: "3.0"
     app.openshift.io/runtime: quarkus
   name: quarkus-gitop-demo
 spec:
