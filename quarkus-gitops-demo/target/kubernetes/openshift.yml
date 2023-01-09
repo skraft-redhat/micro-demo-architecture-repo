@@ -4,8 +4,8 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: b36fc93ae41088b304a877ce908b8169be427e4c
-    app.quarkus.io/build-timestamp: 2023-01-09 - 12:21:58 +0000
+    app.quarkus.io/commit-id: 19664214d2ca11032d53abef97aced8b50df45d8
+    app.quarkus.io/build-timestamp: 2023-01-09 - 12:23:48 +0000
   labels:
     app.kubernetes.io/name: quarkus-gitop-demo
     app.openshift.io/runtime: quarkus
@@ -24,8 +24,8 @@ kind: Deployment
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: b36fc93ae41088b304a877ce908b8169be427e4c
-    app.quarkus.io/build-timestamp: 2023-01-09 - 12:21:58 +0000
+    app.quarkus.io/commit-id: 19664214d2ca11032d53abef97aced8b50df45d8
+    app.quarkus.io/build-timestamp: 2023-01-09 - 12:23:48 +0000
   labels:
     app.openshift.io/runtime: quarkus
     app.kubernetes.io/name: quarkus-gitop-demo
@@ -42,7 +42,7 @@ spec:
         app.kubernetes.io/name: quarkus-gitop-demo
     spec:
       containers:
-        - image: quay.io/skraft/quarkus-gitop-demo:4.0
+        - image: quay.io/skraft/quarkus-gitop-demo:5.0
           imagePullPolicy: Always
           name: quarkus-gitop-demo
           ports:
@@ -55,8 +55,8 @@ kind: Route
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: b36fc93ae41088b304a877ce908b8169be427e4c
-    app.quarkus.io/build-timestamp: 2023-01-09 - 12:21:58 +0000
+    app.quarkus.io/commit-id: 19664214d2ca11032d53abef97aced8b50df45d8
+    app.quarkus.io/build-timestamp: 2023-01-09 - 12:23:48 +0000
   labels:
     app.kubernetes.io/name: quarkus-gitop-demo
     app.openshift.io/runtime: quarkus
