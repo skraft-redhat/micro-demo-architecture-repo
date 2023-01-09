@@ -19,6 +19,6 @@ public class GreetingResource {
 
     @GET
     public String hello() {
-        return String.format("Hello my friend in version %s from host %s\n", version, HOSTNAME);
+        return String.format("Hello my dear old friend in version %s from host %s\n", version, HOSTNAME);
     }
 }
