@@ -12,30 +12,34 @@ import com.oracle.svm.core.annotate.Inject;
 import io.quarkus.security.Authenticated;
 
 @Path("/greeting")
-public class GreetingResource {
+public class GreetingServer {
 
-    @Inject
-    JsonWebToken principal;
+ //   @Inject
+ //   JsonWebToken principal;
 
     @GET
     @Path("/englisch")
     @Produces(MediaType.TEXT_PLAIN)
-    @Authenticated
     public String hello() {
-        return "Hello to " + principal.getName();
+ //       return "Hello to " + principal.getName();
+            return "hello";
     }
 
     @GET
     @Path("deutsch")
     @Produces(MediaType.TEXT_PLAIN)
     public String hallo() {
-        return "Hallo zu " + principal.getName();
+ //       return "Hallo zu " + principal.getName();
+        return "Hallo";
+
     }
 
     @GET
     @Path("franzoesisch")
     @Produces(MediaType.TEXT_PLAIN)
     public String bonjour() {
-        return "Bonjour a " + principal.getName();
+   //     return "Bonjour a " + principal.getName();
+        return "Bonjour";
+
     }
 }

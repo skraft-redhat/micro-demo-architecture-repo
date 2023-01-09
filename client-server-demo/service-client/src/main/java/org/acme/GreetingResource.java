@@ -9,6 +9,8 @@ import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
+import io.quarkus.security.Authenticated;
+
 @Path("/greeting")
 public class GreetingResource {
     
@@ -16,10 +18,11 @@ public class GreetingResource {
     @RestClient
     RestServiceProxy proxy;
 
+    @Authenticated
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@QueryParam("language") String language) {
-        String greeting=""; 
+        String greeting="";
         if (language.equals("englisch")) {
             greeting=proxy.getEnglisch();
         }
