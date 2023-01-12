@@ -78,19 +78,19 @@ spec:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
   description: |
-      Allow same namespace
-  title: Simpon Demo - Allow from Burns
+      Allow from another namespace
+  title: Simpon Demo - Allow from Bouvier
   yaml: |
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
     metadata:
-      name: allow-from-burns
+      name: allow-from-bouvier
     spec:
       podSelector: {}
       ingress:
       - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: burns
+              kubernetes.io/metadata.name: bouvier
       policyTypes:
       - Ingress
