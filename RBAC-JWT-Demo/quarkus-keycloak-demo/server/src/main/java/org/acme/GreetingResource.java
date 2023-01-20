@@ -11,6 +11,8 @@ import javax.ws.rs.core.MediaType;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.jboss.logging.Logger;
 
+import io.quarkus.security.Authenticated;
+
 @Path("/")
 public class GreetingResource {
     private static final Logger LOG = Logger.getLogger(GreetingResource.class);
@@ -21,6 +23,7 @@ public class GreetingResource {
 
     @GET
     @Path("public_from_server")
+
     @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
     public String public_from_server() {
@@ -31,7 +34,9 @@ public class GreetingResource {
 
     @GET
     @Path("secured_from_server")
-    @RolesAllowed({"User", "Admin"})
+    @Authenticated
+ 
+ //   @RolesAllowed({"User", "Admin"})
     
     @Produces(MediaType.TEXT_PLAIN)
     public String secured_from_server() {
