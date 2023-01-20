@@ -34,15 +34,15 @@ public class GreetingResource {
 
     @GET
     @Path("secured_from_server")
-    @Authenticated
+//    @Authenticated
  
- //   @RolesAllowed({"User", "Admin"})
+    @RolesAllowed("admin")
     
     @Produces(MediaType.TEXT_PLAIN)
     public String secured_from_server() {
         LOG.info("Received request from client");
 
-        return String.format("Hello from Server. Has JWT: %s",hasJwt());
+        return String.format("Hello from Server. Has JWT: %s\n\nThe JWT is: %s",hasJwt(),jwt.getRawToken());
     }
 
     private boolean hasJwt() {
