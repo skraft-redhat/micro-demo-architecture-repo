@@ -14,9 +14,6 @@ public class FrontendResource {
     @Inject
     @RestClient
     RestClientWithOidcClientFilter restClientWithOidcClientFilter;
-
-    @Inject
-    @RestClient
     
     @GET
     @Path("user-name-with-oidc-client-token")
