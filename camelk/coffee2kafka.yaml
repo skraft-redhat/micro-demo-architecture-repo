@@ -27,7 +27,7 @@ spec:
       apiVersion: camel.apache.org/v1alpha1
       name: kafka-sink
     properties:
-      bootstrapServers: ""
-      password: ""
+      bootstrapServers: "sk-kafka-cfh-oa-p-kjaq-tmm--a.bf2.kafka.rhcloud.com:443"
+      password: "aLCbUN5p4fS9e49hDq5RhWyUvvOo5RJP"
       topic: "sk-topic"
-      user: ""
+      user: "48dea32f-0fc8-4f3a-bfbe-c90b7235bcf1"
