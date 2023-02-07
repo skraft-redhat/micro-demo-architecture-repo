@@ -20,14 +20,14 @@ spec:
         apiVersion: camel.apache.org/v1
         name: slack-sink
         properties:
-          token: 'xoxb-4037791187831-4761487412130-JADx9ASSSD67RsjAn2i16OtA'
+          token: MY_KAFKA_TOKEN
   sink:
     ref:
       kind: Kamelet
       apiVersion: camel.apache.org/v1alpha1
       name: kafka-sink
     properties:
-      bootstrapServers: "sk-kafka-cfh-oa-p-kjaq-tmm--a.bf2.kafka.rhcloud.com:443"
-      password: "aLCbUN5p4fS9e49hDq5RhWyUvvOo5RJP"
+      bootstrapServers: ""
+      password: ""
       topic: "sk-topic"
-      user: "48dea32f-0fc8-4f3a-bfbe-c90b7235bcf1"
+      user: ""
