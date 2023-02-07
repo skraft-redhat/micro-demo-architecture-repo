@@ -23,14 +23,14 @@ public class FrontendResource {
     }
     
     @GET
-    @Path("user-name-with-oidc-client-token")
+    @Path("userServer")
     @Produces("text/plain")
     public Uni<String> getUserNameWithOidcClientToken() {
         return server.getUserName();
     }
     
     @GET
-    @Path("admin-name-with-oidc-client-token")
+    @Path("adminServer")
     @Produces("text/plain")
     public Uni<String> getAdminNameWithOidcClientToken() {
 	    return server.getAdminName();
