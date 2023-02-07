@@ -18,6 +18,6 @@ public class GreetingResource {
     public String secured_from_server() {
         LOG.info("Received request from client");
 
-        return String.format("Hello from Server.");
+        return String.format("Hello from Server. You are great!");
     }
 }
