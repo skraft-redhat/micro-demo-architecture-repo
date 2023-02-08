@@ -1,0 +1,4 @@
+{
+    "channel":"C04MRVCMVLK",
+    "text":"*"+.user+"@"+.source+"*: "+.text
+}

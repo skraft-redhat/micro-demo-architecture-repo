@@ -1,0 +1,6 @@
+{
+	"source":"kafka",
+	"user": "CoffeeEndpoint",
+	"text": "Now, I drink the coffee " + .blend_name + " from " + .origin + ". It is " + .intensifier + "."
+
+}
