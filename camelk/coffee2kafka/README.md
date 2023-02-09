@@ -85,7 +85,7 @@ Go to https://console.redhat.com/application-services/streams/kafkas
 Click on topic -> Messages
 
 
-##Create Connection from Kafka to Slack:
+## Create Connection from Kafka to Slack:
 1. Create the Format Transformation:
 Create the [jslt FormatTransformation](https://raw.githubusercontent.com/skraft-redhat/micro-demo-architecture-repo/main/camelk/coffee2kafka/maps/coffee2k.jslt) in the folder maps
 
