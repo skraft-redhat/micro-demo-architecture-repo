@@ -17,7 +17,7 @@
 
 ## Get all the properties / tokens from the various systems:
 - (optional) Gitter: https://developer.gitter.im/apps
-- Slack: https://api.slack.com/
+- Slack: https://api.slack.com/  
   Also, create a web hook which is required for the standard Kamelet “slack-sink”: https://api.slack.com/messaging/webhooks
 
 - Kafka: https://developers.redhat.com/products/red-hat-openshift-streams-for-apache-kafka/getting-started
