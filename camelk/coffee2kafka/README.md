@@ -52,7 +52,7 @@ kafka.topic=
 
 ## Configure Kafka:
 1. Create Kafka Instance
-![Kafka Instance](/images/Kafka.png)
+![Kafka Instance](/camelk/coffee2kafka/images/Kafka.png)
 
 2. Create Service Account   
 3. Give access to the Service Account
