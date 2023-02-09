@@ -31,4 +31,5 @@ spec:
       apiVersion: camel.apache.org/v1
       name: slack-sink
     properties:
-      token: "{{slack.token}}"
+      channel: "sk-channel"
+      webhookUrl: https://hooks.slack.com/services/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
