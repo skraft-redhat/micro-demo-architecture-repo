@@ -38,14 +38,9 @@ camel.main.streamCachingEnabled=false
 # On shutdown it reduces waiting time when stoping Camel's streaming listener
 camel.main.shutdownTimeout = 5
 
-# Gitter credentials
-gitter.token=
-gitter.room=
-#gitter.room.name=room10
-
-# Slack
-# credentials
-slack.token=
+# Slack credentials
+sk.channel.name=
+slack.weburi=
 
 # Kafka credentials
 kafka.bootstrapServer=
@@ -102,7 +97,7 @@ Create the [jslt FormatTransformation](https://raw.githubusercontent.com/skraft-
 Oc delete cm stage4-transform
 ```
 
-Convert it (and the previously created mapping) into a Config map:
+- Convert it (and the previously created mapping) into a Config map:
 ```
 oc create cm stage4-transform --from-file=maps
 ```
