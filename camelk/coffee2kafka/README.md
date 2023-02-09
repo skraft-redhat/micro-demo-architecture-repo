@@ -1,9 +1,9 @@
 # Preparation:
-1. Installing Camel K Operator:
-    a. Go to “Operator Hub” 
-    b. Search for “Camel K Operator”
-    c. Install the Operator with all defaults
-    d. Create an “Integration Platform”
+## Installing Camel K Operator:
+1. Go to “Operator Hub” 
+2. Search for “Camel K Operator”
+3. Install the Operator with all defaults
+4. Create an “Integration Platform”
 
 # Demo Flow
 
