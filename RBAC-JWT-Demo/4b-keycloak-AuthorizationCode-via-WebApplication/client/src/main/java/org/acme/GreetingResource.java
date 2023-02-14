@@ -11,9 +11,7 @@ import javax.ws.rs.core.MediaType;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
-import org.jboss.resteasy.reactive.NoCache;
 
-import io.quarkus.security.Authenticated;
 
 @Path("/client")
 public class GreetingResource {

@@ -7,26 +7,24 @@ import javax.ws.rs.Produces;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
-import io.smallrye.mutiny.Uni;
-
-@Path("/frontend")
+@Path("/client")
 public class FrontendResource {
     @Inject
     @RestClient
-    RestClientWithOidcClientFilter restClientWithOidcClientFilter;
+    ServiceInterface server;
     
     @GET
-    @Path("user-name-with-oidc-client-token")
+    @Path("userService")
     @Produces("text/plain")
-    public Uni<String> getUserNameWithOidcClientToken() {
-        return restClientWithOidcClientFilter.getUserName();
+    public String userService() {
+        return server.call_userService();
     }
     
     @GET
-    @Path("admin-name-with-oidc-client-token")
+    @Path("adminService")
     @Produces("text/plain")
-    public Uni<String> getAdminNameWithOidcClientToken() {
-	    return restClientWithOidcClientFilter.getAdminName();
+    public String adminService() {
+	    return server.call_adminService();
     }
     
 }

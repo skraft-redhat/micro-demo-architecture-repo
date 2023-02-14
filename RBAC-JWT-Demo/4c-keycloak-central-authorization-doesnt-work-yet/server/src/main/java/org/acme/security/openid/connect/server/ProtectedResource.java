@@ -1,19 +1,6 @@
 package org.acme.security.openid.connect.server;
 
-import javax.annotation.security.RolesAllowed;
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-
-import io.quarkus.security.Authenticated;
-import io.smallrye.mutiny.Uni;
-
-import org.eclipse.microprofile.jwt.JsonWebToken;
-import org.jboss.logging.Logger;
-
-
-@Path("/protected")
+@Path("/server")
 public class ProtectedResource {
 
     private static final Logger LOG = Logger.getLogger(ProtectedResource.class);
@@ -23,17 +10,17 @@ public class ProtectedResource {
 
     @GET
     @Produces("text/plain")
-    @Path("userName")
-    public Uni<String> userName() {
+    @Path("userService")
+    public String userService() {
         LOG.info("Request received from client");
-        return Uni.createFrom().item(principal.getName());
+        return principal.getName();
     }
     
     @GET
     @Produces("text/plain")
-    @Path("adminName")
-    public Uni<String> adminName() {
+    @Path("adminService")
+    public String adminService() {
         LOG.info("Request received from client");
-        return Uni.createFrom().item(principal.getName());
+        return principal.getName();
     }
 }
