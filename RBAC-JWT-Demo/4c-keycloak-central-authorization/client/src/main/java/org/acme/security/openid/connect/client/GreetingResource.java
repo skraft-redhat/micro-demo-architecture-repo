@@ -10,7 +10,6 @@ import javax.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import org.jboss.logging.Logger;
-import org.jboss.resteasy.reactive.NoCache;
 
 @Path("/client")
 public class GreetingResource {
@@ -20,6 +19,16 @@ public class GreetingResource {
 
     private static final Logger LOG = Logger.getLogger(GreetingResource.class);
     
+    @GET
+    @Path("localService")
+    @PermitAll
+    @Produces(MediaType.TEXT_PLAIN)
+    public String calling_localService() {
+
+        LOG.info("Received request - forwarding to server");
+ //       return serverInterface.publicService();
+        return "hallo";
+    }
     @GET
     @Path("publicService")
     @PermitAll

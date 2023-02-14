@@ -25,7 +25,7 @@ public class ServerResource {
 
     @GET
     @Path("publicService")
-    @PermitAll
+//    @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
     public String public_from_server() {
         LOG.info("Received request from client");
@@ -33,7 +33,7 @@ public class ServerResource {
     }
 
     @GET
-    @RolesAllowed("user")
+//    @RolesAllowed("user")
     @Produces("text/plain")   
     @Path("userService")
     public String userName() {
@@ -43,10 +43,9 @@ public class ServerResource {
     }
     
     @GET
-    @RolesAllowed("admin")
+ //   @RolesAllowed("admin")
     @Produces("text/plain")
     @Path("adminService")
-    @NoCache
     public String adminName() {
         LOG.info("Request received from client");
 
