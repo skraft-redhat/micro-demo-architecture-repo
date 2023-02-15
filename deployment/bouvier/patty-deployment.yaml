@@ -27,7 +27,7 @@ spec:
         deployment: patty
     spec:
       containers:
-      - image: quay.io/openshift-examples/simple-http-server:master
+      - image: quay.io/openshift-examples/simple-http-server:micro
         imagePullPolicy: IfNotPresent
         name: http-server
         ports:

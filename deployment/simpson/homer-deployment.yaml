@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: patty
-    app.kubernetes.io/component: patty
-    app.kubernetes.io/instance: patty
-    app.kubernetes.io/name: patty
-    app.kubernetes.io/part-of: patty
+    app: homer
+    app.kubernetes.io/component: homer
+    app.kubernetes.io/instance: homer
+    app.kubernetes.io/name: homer
+    app.kubernetes.io/part-of: homer
     app.openshift.io/runtime: redhat
-  name: patty
+  name: homer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: patty
+      app: homer
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -23,11 +23,11 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: patty
-        deployment: patty
+        app: homer
+        deployment: homer
     spec:
       containers:
-      - image: quay.io/openshift-examples/simple-http-server:master
+      - image: quay.io/openshift-examples/simple-http-server:micro
         imagePullPolicy: IfNotPresent
         name: http-server
         ports:

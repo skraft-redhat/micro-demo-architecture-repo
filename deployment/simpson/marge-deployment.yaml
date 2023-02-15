@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: patty
-    app.kubernetes.io/component: patty
-    app.kubernetes.io/instance: patty
-    app.kubernetes.io/name: patty
-    app.kubernetes.io/part-of: patty
+    app: marge
+    app.kubernetes.io/component: marge
+    app.kubernetes.io/instance: marge
+    app.kubernetes.io/name: marge
+    app.kubernetes.io/part-of: marge
     app.openshift.io/runtime: redhat
-  name: patty
+  name: marge
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: patty
+      app: marge
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -23,11 +23,11 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: patty
-        deployment: patty
+        app: marge
+        deployment: marge
     spec:
       containers:
-      - image: quay.io/openshift-examples/simple-http-server:master
+      - image: quay.io/openshift-examples/simple-http-server:micro
         imagePullPolicy: IfNotPresent
         name: http-server
         ports:

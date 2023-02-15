@@ -27,7 +27,7 @@ spec:
         deployment: selma
     spec:
       containers:
-      - image: quay.io/openshift-examples/simple-http-server:micro
+      - image: quay.io/openshift-examples/simple-http-server:master
         imagePullPolicy: IfNotPresent
         name: http-server
         ports:
