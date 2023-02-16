@@ -1,14 +1,14 @@
 kind: ConsoleYAMLSample
 apiVersion: console.openshift.io/v1
 metadata:
-  name: netpol-demo-simpon-default-deny
+  name: netpol-demo-simpson-default-deny
 spec:
   targetResource:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
   description: |
       Default deny Network Policy
-  title: Simpon Demo - Default deny
+  title: Simpson Demo - Default deny
   yaml: |
     kind: NetworkPolicy
     apiVersion: networking.k8s.io/v1
@@ -22,14 +22,14 @@ spec:
 kind: ConsoleYAMLSample
 apiVersion: console.openshift.io/v1
 metadata:
-  name: netpol-demo-simpon-allow-from-openshift-ingress
+  name: netpol-demo-simpson-allow-from-openshift-ingress
 spec:
   targetResource:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
   description: |
       Allow from ingress
-  title: Simpon Demo - Allow from ingress
+  title: Simpson Demo - Allow from ingress
   yaml: |
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
@@ -48,14 +48,14 @@ spec:
 kind: ConsoleYAMLSample
 apiVersion: console.openshift.io/v1
 metadata:
-  name: netpol-demo-simpon-allow-same-namespace
+  name: netpol-demo-simpson-allow-same-namespace
 spec:
   targetResource:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
   description: |
       Allow same namespace
-  title: Simpon Demo - Allow same namespace
+  title: Simpson Demo - Allow same namespace
   yaml: |
     kind: NetworkPolicy
     apiVersion: networking.k8s.io/v1
@@ -72,14 +72,14 @@ spec:
 kind: ConsoleYAMLSample
 apiVersion: console.openshift.io/v1
 metadata:
-  name: netpol-demo-simpon-allow-from-burns
+  name: netpol-demo-simpson-allow-from-bouvier
 spec:
   targetResource:
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
   description: |
       Allow from another namespace
-  title: Simpon Demo - Allow from Bouvier
+  title: Simpson Demo - Allow from Bouvier
   yaml: |
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
