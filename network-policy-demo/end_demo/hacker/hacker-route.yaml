@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: hacker
+    app.kubernetes.io/component: hacker
+    app.kubernetes.io/instance: hacker
+    app.kubernetes.io/name: hacker
+    app.kubernetes.io/part-of: hacker
+    app.openshift.io/runtime-version: micro
+  name: hacker
+spec:
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: hacker
+    weight: 100
+  wildcardPolicy: None

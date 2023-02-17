@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: "Home of evil hackers"
+    openshift.io/display-name: "hacker"
+  name: hacker
+spec: {}

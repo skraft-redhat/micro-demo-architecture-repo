@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: hacker
+    app.kubernetes.io/component: hacker
+    app.kubernetes.io/instance: hacker
+    app.kubernetes.io/name: hacker
+    app.kubernetes.io/part-of: hacker
+    app.openshift.io/runtime-version: micro
+  name: hacker
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hacker
+    deployment: hacker
