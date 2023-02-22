@@ -9,7 +9,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @Path("/server")
 @RegisterRestClient
-@RegisterClientHeaders(RequestHeaderFactory.class)
+@RegisterClientHeaders()
 public interface ServerInterface {
     
     @GET

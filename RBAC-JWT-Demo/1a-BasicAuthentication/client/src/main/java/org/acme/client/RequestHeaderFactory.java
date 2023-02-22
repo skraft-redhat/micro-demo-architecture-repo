@@ -23,7 +23,7 @@ public class RequestHeaderFactory implements ClientHeadersFactory {
     public MultivaluedMap<String, String> update(MultivaluedMap<String, String> incomingHeaders, MultivaluedMap<String, String> clientOutgoingHeaders) {
         MultivaluedMap<String, String> result = new MultivaluedHashMap<>();
         
-        result.add("Authorization", "Basic " + Base64.getEncoder().encodeToString("user:user".getBytes()));
+        result.add("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:admin".getBytes()));
         return result;
     }
 
