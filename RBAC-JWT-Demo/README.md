@@ -1,4 +1,4 @@
 | Module | Description | Extension for Client | Extension for Server | Other components required? |
 | --- | --- | --- | --- | --- | 
-| RBAC with http Query Headers|This is the most basic module where the "role" is transferred as a Query Header. The server validates the role programmatically.|- RestEasy Reactive- RestEasy Client Reactive|- RestEasy Reactive||
+| RBAC with http Query Headers|This is the most basic module where the "role" is transferred as a Query Header. The server validates the role programmatically.|+ RestEasy Reactive- RestEasy Client Reactive|+ RestEasy Reactive||
 |RBAC with Basic Authentication|The credentials are stored in a database. The client uses browser-based Basic Authentication. This is then propagated to the Server. |RestEasy Reactive, RestEasy Client Reactive <br> For the connection with the database: Hibernate-orm-panache, security-jpa,jdbc-postgresql|RestEasy Reactive<br>For the connection with the database: Hibernate-orm-panache, security-jpa,jdbc-postgresql|External database to store user credentials|
