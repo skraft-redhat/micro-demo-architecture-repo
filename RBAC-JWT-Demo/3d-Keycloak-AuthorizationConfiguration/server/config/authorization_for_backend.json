@@ -1,0 +1,109 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "userResource",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "ed783cb1-14e2-4746-9cd3-401f789fca5f",
+      "uris": [
+        "/server/userService/*"
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "adminResource",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "71601aad-9f8f-4ada-b99b-dd4180ca5b0a",
+      "uris": [
+        "/server/adminService*"
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "Default Resource",
+      "type": "urn:backend-service:resources:default",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "fd4e1c19-620b-4bfe-9b5d-7bef785d6226",
+      "uris": [
+        "/*"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "f5a3d664-db2c-4f8f-a110-4bab2fc828c2",
+      "name": "userPolicy",
+      "description": "",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"user\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "cc3e1176-f2cc-46a6-9cdf-e715aa83216d",
+      "name": "Default Policy",
+      "description": "A policy that grants access only for users within this realm",
+      "type": "js",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+      }
+    },
+    {
+      "id": "a65f7da2-ac25-4ec3-a83a-48b2135c1d17",
+      "name": "adminPolicy",
+      "description": "",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"admin\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "fe208f29-fa93-4cc8-b579-9e22f4007f1a",
+      "name": "userPermission",
+      "description": "",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"userResource\"]",
+        "applyPolicies": "[\"userPolicy\"]"
+      }
+    },
+    {
+      "id": "45d872a4-78b6-4826-83ec-248e684f3f82",
+      "name": "adminPermission",
+      "description": "",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"adminResource\"]",
+        "applyPolicies": "[\"adminPolicy\"]"
+      }
+    },
+    {
+      "id": "d73b571f-daf2-416f-8cf8-01058582f4c2",
+      "name": "Default Permission",
+      "description": "A permission that applies to the default resource type",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "defaultResourceType": "urn:backend-service:resources:default",
+        "applyPolicies": "[\"Default Policy\"]"
+      }
+    }
+  ],
+  "scopes": [],
+  "decisionStrategy": "UNANIMOUS"
+}
