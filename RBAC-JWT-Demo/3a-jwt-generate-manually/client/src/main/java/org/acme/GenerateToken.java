@@ -15,7 +15,7 @@ public class GenerateToken {
         String token =
            Jwt.issuer("https://example.com/issuer") 
              .upn("jdoe@quarkus.io") 
-             .groups(new HashSet<>(Arrays.asList("User", "Admin"))) 
+             .groups(new HashSet<>(Arrays.asList("user", "admin"))) 
              .claim(Claims.birthdate.name(), "2001-07-13")
              .expiresIn(3600)
            .sign();

@@ -7,7 +7,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.Date;
 
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
@@ -33,7 +32,7 @@ public class GreetingResource {
 
     @GET
     @Path("userService")
-    @RolesAllowed({"User", "Admin"})
+    @RolesAllowed({"user", "admin"})
     @Produces(MediaType.TEXT_PLAIN)
     public String userService_from_server() {
         LOG.info("Received request from client");
@@ -43,7 +42,7 @@ public class GreetingResource {
 
     @GET
     @Path("adminService")
-    @RolesAllowed("Admin")
+    @RolesAllowed("admin")
 
     @Produces(MediaType.TEXT_PLAIN)
     public String AdminService_from_server() {

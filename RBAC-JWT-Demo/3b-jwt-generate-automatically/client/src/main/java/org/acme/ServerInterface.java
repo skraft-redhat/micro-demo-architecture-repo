@@ -8,7 +8,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @Path("/server")
 @RegisterRestClient
-@RegisterClientHeaders(RequestJWTHeaderFactory.class)
+@RegisterClientHeaders(AddJWTtoHttpRequestHeaderFactory.class)
 public interface ServerInterface {
     
     @GET

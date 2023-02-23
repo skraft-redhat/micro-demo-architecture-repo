@@ -1,6 +1,7 @@
 package org.acme;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -35,6 +36,7 @@ public class GreetingResource {
 
     @GET
     @Path("userService")
+    @RolesAllowed("user")
     @Produces(MediaType.TEXT_PLAIN)
     public String calling_UserService() {
         LOG.info("Received request - forwarding to server");
@@ -43,6 +45,7 @@ public class GreetingResource {
 
     @GET
     @Path("adminService")
+    @RolesAllowed("admin")
     @Produces(MediaType.TEXT_PLAIN)
     public String calling_AdminService() {
         LOG.info("Received request - forwarding to server");

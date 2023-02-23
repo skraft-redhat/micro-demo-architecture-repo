@@ -16,11 +16,11 @@ import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 
 @ApplicationScoped
-public class RequestJWTHeaderFactory implements ClientHeadersFactory {
+public class AddJWTtoHttpRequestHeaderFactory implements ClientHeadersFactory {
     @Inject
     JsonWebToken jwt;
 
-    private static final Logger LOG = Logger.getLogger(RequestJWTHeaderFactory.class);
+    private static final Logger LOG = Logger.getLogger(AddJWTtoHttpRequestHeaderFactory.class);
 
 
     @Override
@@ -38,8 +38,8 @@ public class RequestJWTHeaderFactory implements ClientHeadersFactory {
         String token =
            Jwt.issuer("https://example.com/issuer") 
              .upn("jdoe@quarkus.io") 
-             .groups(new HashSet<>(Arrays.asList("User"))) 
-//             .groups(new HashSet<>(Arrays.asList("User", "Admin"))) 
+ //            .groups(new HashSet<>(Arrays.asList("user"))) 
+             .groups(new HashSet<>(Arrays.asList("user", "admin"))) 
              .claim(Claims.birthdate.name(), "2001-07-13")
              .expiresIn(3600)
            .sign();
