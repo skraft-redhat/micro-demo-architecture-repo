@@ -41,7 +41,6 @@ public class GreetingResource {
         return serverInterface.userService();
     }
 
-
     @GET
     @Path("adminService")
     @Produces(MediaType.TEXT_PLAIN)
