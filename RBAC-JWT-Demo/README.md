@@ -1,10 +1,13 @@
 # Overview
 
+
 This is a series of modules to showcase different options with regard to RBAC. The basic architecture is always the same:
 + A **client** has three endpoints (publicService, userService, adminService) that is calling respective end-points from a **server**
 + A **server** allows all access to the *publicService*, only "user" access to the *userService* and only "admin" access to the *adminService*
 
+
 See below a table with an overview about the different modules:
+
 
 | Module | Description | Options | Extension for Client | Extension for Server | Other components required? |
 | --- | --- | --- | --- | --- | --- |
