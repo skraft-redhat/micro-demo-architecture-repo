@@ -6,7 +6,7 @@
 <br>See below a table with an overview about the different modules:<br>
 
 | Module |Description | Options | Concepts showcased | Other components required? |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 |[RBAC with http Query Headers](https://github.com/skraft-redhat/micro-demo-architecture-repo/tree/main/RBAC-JWT-Demo/1a-BasicAuthentication)|This is the most basic module where the "role" is transferred as a Query Header. The server validates the role programmatically.||REST Client \&Server||
 |[RBAC with Basic Authentication](https://github.com/skraft-redhat/micro-demo-architecture-repo/tree/main/RBAC-JWT-Demo/1b-Authentication-via-http-header)|The client uses browser-based Basic Authentication. This is then propagated to the Server. |Credentials are specified in .properties file|Basic Authentication<br>Http Header Propogation||
 |||Credentials are stored in a database|Basic Authentication<br>JPA|Exernal database|
