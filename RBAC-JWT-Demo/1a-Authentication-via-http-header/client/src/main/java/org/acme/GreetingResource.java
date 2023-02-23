@@ -20,9 +20,17 @@ public class GreetingResource {
     ExternalService externalService; 
 
     @GET
+    @Path("/publicService")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String call_publicService() {
+
+        return externalService.publicService();   
+    }
+
+    @GET
     @Path("/adminService")
     @Produces(MediaType.TEXT_PLAIN)
-    public String helloAdmin(@QueryParam("role") String role) {
+    public String call_adminService(@QueryParam("role") String role) {
         if (role == null) {
             throw new WebApplicationException(
               Response.status(Response.Status.BAD_REQUEST)
@@ -30,7 +38,7 @@ public class GreetingResource {
                 .build()
             );
         }
-        return externalService.AdminService(role);   
+        return externalService.adminService(role);   
     }
 
     @GET
@@ -44,6 +52,6 @@ public class GreetingResource {
                 .build()
             );
         }
-        return externalService.UserService(role);   
+        return externalService.userService(role);   
     }
 }

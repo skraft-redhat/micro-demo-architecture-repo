@@ -6,17 +6,20 @@ import javax.ws.rs.QueryParam;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import io.quarkus.rest.client.reactive.ClientQueryParam;
 
 @RegisterRestClient
-@Path("/GreetingService")
+@Path("/server")
 public interface ExternalService {
 
     @GET
-    @Path("admin")
-    String AdminService (@QueryParam("role") String role);
+    @Path("publicService")
+    String publicService ();
 
     @GET
-    @Path("user")
-    String UserService (@QueryParam("role") String role);
+    @Path("userService")
+    String userService (@QueryParam("role") String role);
+
+    @GET
+    @Path("adminService")
+    String adminService (@QueryParam("role") String role);
 }

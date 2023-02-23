@@ -1,3 +1,11 @@
+# Overview
+
+This is a series of modules to showcase different options with regard to RBAC. The basic architecture is always the same:
++ A **client** has three endpoints (publicService, userService, adminService) that is calling respective end-points from a **server**
++ A **server** allows all access to the *publicService*, only "user" access to the *userService* and only "admin" access to the *adminService*
+
+See below a table with an overview about the different modules:
+
 | Module | Description | Options | Extension for Client | Extension for Server | Other components required? |
 | --- | --- | --- | --- | --- | --- |
 |[RBAC with http Query Headers](https://github.com/skraft-redhat/micro-demo-architecture-repo/tree/main/RBAC-JWT-Demo/1a-BasicAuthentication)|This is the most basic module where the "role" is transferred as a Query Header. The server validates the role programmatically.||RestEasy Reactive,<br>RestEasy Client Reactive|<br>RestEasy Reactive||
