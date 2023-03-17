@@ -15,55 +15,38 @@ import org.jboss.resteasy.reactive.NoCache;
 
 import io.quarkus.security.Authenticated;
 
-@Path("/")
+@Path("/servicea")
 public class GreetingResource {
 
     private static final Logger LOG = Logger.getLogger(GreetingResource.class);
-
-
-    @Inject
-    JsonWebToken jwt;
 
     @RestClient
     @Inject
     ServerInterface serverInterface;
 
     @GET
-    @Path("public_from_client")
-    //@PermitAll
-    @Authenticated
+    @Path("publicService")
+    @PermitAll
     @Produces(MediaType.TEXT_PLAIN)
-    public String public_fromClient() {
-        
-        LOG.info("Received request - serving locally");
-
-        return String.format("Hello from client. Has JWT: %s",hasJwt());
+    public String calling_publicService() {
+        LOG.info("Received request - forwarding to server");
+        return serverInterface.publicService();
     }
 
     @GET
-    @Path("secured_from_client")
-
-//    @RolesAllowed({"user", "admin"})
-    @Authenticated
+    @Path("userService")
     @Produces(MediaType.TEXT_PLAIN)
-    public String secured_fromClient() {
-        LOG.info("Received request - serving locally");
-        return String.format("Hello from client. Has JWT: %s. The JWT is: %s",hasJwt(),jwt.getRawToken());
-    }
-
-    @GET
-    @Path("secured_from_server")
-    @NoCache
-    //@RolesAllowed({"User", "Admin"})
-    @Authenticated
-    @Produces(MediaType.TEXT_PLAIN)
-    public String secured_from_server() {
+    public String calling_UserService() {
         LOG.info("Received request - forwarding to server");
 
-        return serverInterface.secured_from_server();
+        return serverInterface.userService();
     }
 
-    private boolean hasJwt() {
-        return jwt.getClaimNames() != null;
+    @GET
+    @Path("adminService")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String calling_AdminService() {
+        LOG.info("Received request - forwarding to server");
+        return serverInterface.adminService();
     }
 }

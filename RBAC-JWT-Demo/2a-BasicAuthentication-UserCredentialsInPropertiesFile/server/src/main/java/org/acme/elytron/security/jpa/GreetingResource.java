@@ -17,7 +17,7 @@ public class GreetingResource {
     @Path("/userService")
     @Produces(MediaType.TEXT_PLAIN)
     public String userName(@Context SecurityContext securityContext) {
-        return securityContext.getUserPrincipal().getName();
+        return "Hello this is from Server. The user is: " + securityContext.getUserPrincipal().getName();
     }
 
     @GET

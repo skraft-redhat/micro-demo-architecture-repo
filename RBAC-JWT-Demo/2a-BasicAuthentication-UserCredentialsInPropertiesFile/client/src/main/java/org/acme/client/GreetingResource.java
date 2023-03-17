@@ -44,7 +44,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String calling_AdminService() {
         LOG.info("Received request - forwarding to server");
-
-        return serverInterface.adminService();
+        return "Hallo";
+    //    return serverInterface.adminService();
     }
 }
