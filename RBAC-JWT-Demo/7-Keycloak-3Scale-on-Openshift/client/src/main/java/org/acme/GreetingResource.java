@@ -30,7 +30,8 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String calling_publicService() {
         LOG.info("Received request - forwarding to server");
-        return serverInterface.publicService();
+        return "hallo";
+ //       return serverInterface.publicService();
     }
 
     @GET

@@ -6,7 +6,7 @@ import javax.ws.rs.Path;
 import org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-@Path("/serviceb")
+@Path("/serviceB")
 @RegisterRestClient
 @RegisterClientHeaders(RequestJWTHeaderFactory.class)
 public interface ServerInterface {
